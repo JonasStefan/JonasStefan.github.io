@@ -65,8 +65,8 @@
 
         // Startposition
         confetti.style.left = fromLeft
-            ? `${Math.random() * 100}px`
-            : `${window.innerWidth - Math.random() * 100}px`;
+            ? `${Math.random() * 10}vw`
+            : `${100 - Math.random() * 10}vw`;
         confetti.style.bottom = "0px";
 
         document.body.appendChild(confetti);
@@ -74,9 +74,9 @@
         // Zielwerte animiert setzen
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-                const offsetX = Math.random() * 500 * (fromLeft ? 1 : -1);
+                const offsetX = Math.random() * 30 * (fromLeft ? 1 : -1);
                 const rotate = 360 + Math.random() * 720;
-                confetti.style.transform = `translate(${offsetX}px, -100vh) rotate(${rotate}deg)`;
+                confetti.style.transform = `translate(${offsetX}vw, -100vh) rotate(${rotate}deg)`;
                 confetti.style.opacity = 0;
             });
         });
